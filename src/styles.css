@@ -1,3 +1,9 @@
+@import '@pnotify/core/dist/BrightTheme.css';
+@import '@pnotify/core/dist/Material.css';
+@import 'material-design-icons/iconfont/material-icons.css';
+@import '@pnotify/core/dist/PNotify.css';
+@import '@pnotify/mobile/dist/PNotifyMobile.css';
+
 html {
   box-sizing: border-box;
 }
@@ -70,4 +76,60 @@ ul {
 }
 .search-form{
   padding-top: 15px;
+}
+.cross-around {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100wh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity, cubic-bezier(0.4, 0, 0.2, 1), 250ms;
+}
+.backdrop.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+.hidden {
+  visibility: hidden;
+
+}
+.backdrop-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #a29eae;
+}
+.modal-window {
+  transition: scale(0.95);
+  transform: transition, cubic-bezier(0.4, 0, 0.2, 1), 250ms;
+}
+.backdrop.is-open .modal-window {
+  transform: scale(1);
+}
+.img-origin {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 100vh;
+  max-width: 100vw;
 }
