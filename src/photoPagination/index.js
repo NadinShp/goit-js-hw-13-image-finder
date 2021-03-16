@@ -23,9 +23,9 @@ export default class PhotoPagination {
 
                   defaultModules.set(PNotifyMobile, {});
                   success({
-                      text: 'Images loaded success!',
-                stack: new Stack({
-                dir1: 'up', dir2: 'left',
+                  text: 'Images loaded success!',
+                  stack: new Stack({
+                  dir1: 'up', dir2: 'left',
                     firstpos1: 25, firstpos2: 25
                   })
                 });

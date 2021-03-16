@@ -2,12 +2,8 @@ import './styles.css';
 import PhotoPagination from './photoPagination/index';
 import photoCard from './templates/photoCard.hbs';
 import createMurkupHtml from './js/murkup-html';
-import { alert, error, success, defaultModules } from '@pnotify/core/dist/PNotify.js';
-import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
-// import originImgCard from './templates/originImgCard.hbs';
-const { defaults } = require('@pnotify/core');
-defaults.styling = 'material';
-defaults.icons = 'material';
+import originImgCard from './templates/originImgCard.hbs';
+
 
 createMurkupHtml();
 
@@ -41,7 +37,6 @@ async function loadMore() {
     height = galleryRef.clientHeight;
     await photoPagination.fetchPhotos().then(data => appendPhotosMurkup(data));
     toScroll();
-    // console.log(height);
 }
 function toScroll() {
     let totalHeight = height + 80;
@@ -68,9 +63,9 @@ function cleanContainer() {
 //     console.log(arrayPhoto);
 // }
 // function createaArrayAllPhoto(data) {
-//      const murkupPhoto = data.map(element =>photoAdapterArray(element));
-//     console.log(murkupPhoto);
-//     return murkupPhoto;
+//     const arrayPhot = data.map(element =>photoAdapterArray(element));
+//     console.log(arrayPhot);
+//     return arrayPhot;
 // }
 // const photoAdapterArray = ({ id, largeImageURL }) => ({
 //     src: `${largeImageURL}`,
